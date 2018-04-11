@@ -6,11 +6,12 @@ $(document).ready(function() {
 	canvas.setHeight(550);
 
 	canvas.on("object:modified", function(options) {
-		show(canvas.getActiveObject());
+		showProp(canvas.getActiveObject());
 	});
+
 });
 
-function addObject() {
+function addShape() {
 	var object = new fabric.Rect({
 		left : 50,
 		top : 50,
@@ -19,14 +20,15 @@ function addObject() {
 		height : 50
 	});
 	canvas.add(object).renderAll().setActiveObject(object);
-	show(object);
+	showProp(object);
 }
 
 function clearAll() {
 	canvas.clear().renderAll();
+	document.getElementById("form").reset();
 }
 
-function show(object) {
+function showProp(object) {
 	document.getElementById("form").elements["left"].value = object.left;
 	document.getElementById("form").elements["top"].value = object.top;
 	document.getElementById("form").elements["width"].value = object.width;
@@ -34,23 +36,24 @@ function show(object) {
 	document.getElementById("form").elements["color"].value = object.fill;
 }
 
-function saveObject() {
-	var oldObject = canvas.getActiveObject();
-	canvas.remove(oldObject);
+function showShape() {
+	var oldShape = canvas.getActiveObject();
+	canvas.remove(oldShape);
 
-	var left = document.getElementById("form").elements["left"].value;
-	var top = document.getElementById("form").elements["top"].value;
-	var width = document.getElementById("form").elements["width"].value;
-	var height = document.getElementById("form").elements["height"].value;
-	var color = document.getElementById("form").elements["color"].value;
+	var left = $("#left").val();
+	var top = $("#top").val();
+	var width = $("#width").val();
+	var height = $("#height").val();
+	var color = $("#color").val();
 
-	var newObject = new fabric.Rect({
+	var newShape = new fabric.Rect({
 		left : parseInt(left),
 		top : parseInt(top),
 		fill : color,
 		width : parseInt(width),
 		height : parseInt(height)
 	});
-	canvas.add(newObject).renderAll().setActiveObject(newObject);
-	show(newObject);
+
+	canvas.add(newShape).renderAll().setActiveObject(newShape);
+	showProp(newShape);
 }
