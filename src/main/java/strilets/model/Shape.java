@@ -2,14 +2,34 @@ package strilets.model;
 
 public class Shape {
 
-	Shape() {
+	public Shape() {
 	}
 
+	public Shape(int id, double left, double top, double height, double width, String color, double angle) {
+		this.id = id;
+		this.left = left;
+		this.top = top;
+		this.height = height;
+		this.width = width;
+		this.color = color;
+		this.setAngle(angle);
+	}
+
+	private int id;
 	private double top;
 	private double left;
-	private double hieght;
+	private double height;
 	private double width;
 	private String color;
+	private double angle;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public double getTop() {
 		return top;
@@ -27,12 +47,12 @@ public class Shape {
 		this.left = left;
 	}
 
-	public double getHieght() {
-		return hieght;
+	public double getHeight() {
+		return height;
 	}
 
-	public void setHieght(double hieght) {
-		this.hieght = hieght;
+	public void setHeight(double height) {
+		this.height = height;
 	}
 
 	public double getWidth() {
@@ -49,5 +69,13 @@ public class Shape {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+
+	public double getAngle() {
+		return angle;
+	}
+
+	public void setAngle(double angle) {
+		this.angle = angle;
 	}
 }
