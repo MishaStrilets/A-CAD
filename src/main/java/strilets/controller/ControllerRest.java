@@ -45,7 +45,7 @@ public class ControllerRest {
 
 	@DeleteMapping(value = "/delete/{id}")
 	public ResponseEntity<?> deleteCustomer(@PathVariable String id) {
-		if (Integer.valueOf(id) == -1)
+		if (Integer.valueOf(id) == -1 || id == "")
 			return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 		else {
 			database.deleteShape(Integer.valueOf(id));

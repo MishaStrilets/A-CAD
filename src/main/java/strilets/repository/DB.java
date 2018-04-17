@@ -7,7 +7,7 @@ import strilets.model.Shape;
 
 public class DB {
 
-	private static int count = 0;
+	private int count = 0;
 	private List<Shape> listShapes;
 
 	private Shape shape1 = new Shape(count++, 50.0, 10.0, 45.0, 60.0, "red", 0);;

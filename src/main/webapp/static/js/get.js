@@ -13,6 +13,8 @@ $(document).ready(function() {
 
 			success : function(data) {
 
+				clearAll();
+
 				if (data == "")
 					alert("No figures.");
 
