@@ -27,13 +27,13 @@
 </head>
 
 <body>
+	<button id="get" type="button" class="btn btn-basic">Show all
+		shapes</button>
+	<button type="button" class="btn btn-warning" onclick="clearAll()">Clear</button>
 	<button type="button" class="btn btn-primary" onclick="addShape()">Add
 		shape</button>
 	<button type="button" class="btn btn-danger" onclick="deleteShape()">Delete
 		shape</button>
-	<button type="button" class="btn btn-warning" onclick="clearAll()">Clear</button>
-	<button id="get" type="button" class="btn btn-basic">Show all
-		shapes</button>
 	<div class="row">
 		<div class="col-sm-9">
 			<canvas id="canvas"></canvas>
