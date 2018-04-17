@@ -7,10 +7,12 @@ import strilets.model.Shape;
 
 public class DB {
 
+	private static int count = 0;
 	private List<Shape> listShapes;
-	private Shape shape1 = new Shape(0, 50.0, 10.0, 45.0, 60.0, "red", 0);
-	private Shape shape2 = new Shape(1, 238.0, 40.0, 70.0, 10.0, "green", 50);
-	private Shape shape3 = new Shape(2, 58.0, 113.0, 80.0, 80.0, "blue", 10);
+
+	private Shape shape1 = new Shape(count++, 50.0, 10.0, 45.0, 60.0, "red", 0);;
+	private Shape shape2 = new Shape(count++, 238.0, 40.0, 70.0, 10.0, "green", 50);
+	private Shape shape3 = new Shape(count++, 58.0, 113.0, 80.0, 80.0, "blue", 10);
 
 	public DB() {
 		listShapes = new ArrayList<Shape>();
@@ -20,6 +22,7 @@ public class DB {
 	}
 
 	public void addShape(Shape shape) {
+		shape.setId(count++);
 		listShapes.add(shape);
 	}
 

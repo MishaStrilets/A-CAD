@@ -30,7 +30,6 @@ public class ControllerRest {
 			return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 
 		if (shape.getId() == -1) {
-			shape.setId(database.countShapes());
 			database.addShape(shape);
 		} else {
 			database.setShape(shape.getId(), shape);
