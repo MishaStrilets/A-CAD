@@ -23,16 +23,31 @@ public class DB {
 		listShapes.add(shape);
 	}
 
-	public int count() {
+	public int countShapes() {
 		return listShapes.size();
 	}
 
-	public void setShape(int index, Shape shape) {
-		listShapes.set(index, shape);
+	public void setShape(int id, Shape shape) {
+		if (getIndexById(id) != -1)
+			listShapes.set(getIndexById(id), shape);
 	}
 
 	public List<Shape> getAllShapes() {
 		return listShapes;
+	}
+
+	public void deleteShape(int id) {
+		if (getIndexById(id) != -1)
+			listShapes.remove(getIndexById(id));
+	}
+
+	public int getIndexById(int id) {
+		for (Shape shape : listShapes) {
+			if (id == shape.getId())
+				return listShapes.indexOf(shape);
+		}
+
+		return -1;
 	}
 
 }

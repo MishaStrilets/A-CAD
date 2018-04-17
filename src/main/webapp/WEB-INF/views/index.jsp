@@ -22,15 +22,18 @@
 <script type="text/javascript" src="/static/js/canvas.js"></script>
 <script type="text/javascript" src="/static/js/post.js"></script>
 <script type="text/javascript" src="/static/js/get.js"></script>
+<script type="text/javascript" src="/static/js/delete.js"></script>
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet"></link>
 </head>
 
 <body>
 	<button type="button" class="btn btn-primary" onclick="addShape()">Add
 		shape</button>
-	<button type="button" class="btn btn-danger" onclick="clearAll()">Clear</button>
-	<button id="get" type="button" class="btn btn-basic"
-		onclick="showAll()">Show all shapes</button>
+	<button type="button" class="btn btn-danger" onclick="deleteShape()">Delete
+		shape</button>
+	<button type="button" class="btn btn-warning" onclick="clearAll()">Clear</button>
+	<button id="get" type="button" class="btn btn-basic">Show all
+		shapes</button>
 	<div class="row">
 		<div class="col-sm-9">
 			<canvas id="canvas"></canvas>

@@ -13,6 +13,9 @@ $(document).ready(function() {
 
 			success : function(data) {
 
+				if (data == "")
+					alert("No figures.");
+
 				$.each(data, function(i, shape) {
 
 					var object = new fabric.Rect({
